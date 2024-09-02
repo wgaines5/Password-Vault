@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.wear.widget.BoxInsetLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.MainScreen">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="135dp"
+            android:layout_height="30dp"
+            android:fontFamily="cursive"
+            android:gravity="center"
+            android:text="PASSWORD VAULT"
+            android:textColor="#039BE5"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/addPasswordButton"
+            android:layout_width="125dp"
+            android:layout_height="38dp"
+            android:backgroundTint="#4CAF50"
+            android:text="Add"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/viewPasswordsButton"
+            android:layout_width="125dp"
+            android:layout_height="38dp"
+            android:backgroundTint="#A3660C"
+            android:text="View"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/removePasswordsButton"
+            android:layout_width="125dp"
+            android:layout_height="38dp"
+            android:backgroundTint="#EA0202"
+            android:text="Remove"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/updatePasswordsButton"
+            android:layout_width="125dp"
+            android:layout_height="38dp"
+            android:backgroundTint="#2BB3F1"
+            android:text="Update"
+            android:textSize="14sp" />
+    </LinearLayout>
+</androidx.wear.widget.BoxInsetLayout>
