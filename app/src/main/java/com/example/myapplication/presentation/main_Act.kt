@@ -6,6 +6,7 @@
 
 package com.example.myapplication.presentation
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -15,6 +16,7 @@ import com.example.myapplication.R
 import com.example.myapplication.R.layout
 
 class MainScreen : ComponentActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen()
@@ -23,6 +25,7 @@ class MainScreen : ComponentActivity() {
         val addPasswordButton = findViewById<Button>(R.id.addPasswordButton)
         val viewPasswordsButton = findViewById<Button>(R.id.viewPasswordsButton)
         val removePasswordButton = findViewById<Button>(R.id.removePasswordsButton)
+
 
 
         addPasswordButton.setOnClickListener{
@@ -36,10 +39,15 @@ class MainScreen : ComponentActivity() {
 
         viewPasswordsButton.setOnClickListener {
             setContentView(layout.viewpw)
+            val googleButton = findViewById<Button>(R.id.google)
+            googleButton.setOnClickListener {
+                setContentView(layout.google)
+            }
         }
 
         removePasswordButton.setOnClickListener {
             setContentView(layout.removepw)
         }
+
     }
 }

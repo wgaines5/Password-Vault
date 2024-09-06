@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1027667900311",
+    "project_id": "passwordvault-a712b",
+    "storage_bucket": "passwordvault-a712b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1027667900311:android:dff6879cf25cec913b36d2",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABewmZwHABGa2-9wCXHHGr5k8IMi6fdP8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

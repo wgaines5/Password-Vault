@@ -18,6 +18,7 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/google"
                 android:layout_width="110dp"
                 android:layout_height="40dp"
                 android:text="Google"
