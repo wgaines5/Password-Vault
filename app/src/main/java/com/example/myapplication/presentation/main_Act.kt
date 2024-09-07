@@ -14,6 +14,7 @@ import androidx.activity.ComponentActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.example.myapplication.R
 import com.example.myapplication.R.layout
+import com.example.myapplication.presentation.theme.AddPWD
 
 class MainScreen : ComponentActivity() {
     @SuppressLint("MissingInflatedId")
@@ -29,12 +30,8 @@ class MainScreen : ComponentActivity() {
 
 
         addPasswordButton.setOnClickListener{
-            setContentView(layout.addpw)
-
-            val doneButton = findViewById<Button>(R.id.doneB)
-            doneButton.setOnClickListener{val intent = Intent(this, MainScreen::class.java)
+            val intent = Intent(this, AddPWD::class.java)
             startActivity(intent)
-            finish()}
         }
 
         viewPasswordsButton.setOnClickListener {
