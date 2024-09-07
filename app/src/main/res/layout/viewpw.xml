@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.wear.widget.BoxInsetLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.wear.widget.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp">
+    android:background="#FDFDFD"
+    android:padding="16dp">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -17,78 +17,23 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/google"
-                android:layout_width="110dp"
-                android:layout_height="40dp"
-                android:text="Google"
-                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/pwdTView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Loading Passwords..."
+                android:textColor="#000000"
+                android:textSize="16sp"/>
 
             <Button
-                android:layout_width="110dp"
+                android:id="@+id/doneB2"
+                android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:text="Discord"
-                android:textSize="16sp" />
+                android:text="DONE"
+                android:layout_marginTop="50dp"/>
 
-            <Button
-                android:layout_width="110dp"
-                android:layout_height="40dp"
-                android:text="Walmart"
-                android:textSize="16sp" />
 
-            <Button
-                android:layout_width="110dp"
-                android:layout_height="40dp"
-                android:text="Metamask"
-                android:textSize="14sp" />
-
-            <Button
-                android:layout_width="110dp"
-                android:layout_height="40dp"
-                android:text="BestBuy"
-                android:textSize="16sp" />
-
-            <Button
-                android:layout_width="110dp"
-                android:layout_height="40dp"
-                android:text="Navy Federal"
-                android:textSize="12sp" />
-
-            <Button
-                android:layout_width="110dp"
-                android:layout_height="40dp"
-                android:text="Athena"
-                android:textSize="16sp" />
-
-            <Button
-                android:layout_width="110dp"
-                android:layout_height="40dp"
-                android:text="Chime"
-                android:textSize="16sp" />
-
-            <Button
-                android:layout_width="110dp"
-                android:layout_height="40dp"
-                android:text="Facebook"
-                android:textSize="16sp" />
-
-            <Button
-                android:layout_width="110dp"
-                android:layout_height="40dp"
-                android:text="Instagram"
-                android:textSize="14sp" />
-
-            <Button
-                android:layout_width="110dp"
-                android:layout_height="40dp"
-                android:text="SnapChat"
-                android:textSize="16sp" />
-
-            <Button
-                android:layout_width="110dp"
-                android:layout_height="40dp"
-                android:text="X Box"
-                android:textSize="16sp" />
         </LinearLayout>
     </ScrollView>
 </androidx.wear.widget.BoxInsetLayout>

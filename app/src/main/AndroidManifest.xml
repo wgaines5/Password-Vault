@@ -31,7 +31,9 @@
         <activity
             android:name=".presentation.theme.AddPWD"
             android:exported="false" />
-
+        <activity
+            android:name=".presentation.theme.ViewPWD"
+            android:exported="false"/>
         <service
             android:name=".complication.MainComplicationService"
             android:exported="true"
