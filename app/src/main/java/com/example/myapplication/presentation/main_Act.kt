@@ -15,6 +15,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.example.myapplication.R
 import com.example.myapplication.R.layout
 import com.example.myapplication.presentation.theme.AddPWD
+import com.example.myapplication.presentation.theme.RemovePWD
 import com.example.myapplication.presentation.theme.ViewPWD
 
 class MainScreen : ComponentActivity() {
@@ -41,7 +42,8 @@ class MainScreen : ComponentActivity() {
         }
 
         removePasswordButton.setOnClickListener {
-            setContentView(layout.removepw)
+            val intent = Intent(this, RemovePWD::class.java)
+            startActivity(intent)
         }
 
         updatePasswordButton.setOnClickListener{
