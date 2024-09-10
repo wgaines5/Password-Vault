@@ -10,14 +10,14 @@
         android:layout_width="200dp"
         android:layout_height="70dp"
         android:gravity="center"
-        android:text="     Site or App Name"/>
+        android:hint="     Site or App Name"/>
 
     <EditText
         android:id="@+id/passwordEntry"
         android:layout_width="200dp"
         android:layout_height="70dp"
         android:gravity="center"
-        android:text="  Enter Password" />
+        android:hint="  Enter Password" />
 
     <Button
         android:id="@+id/doneB"

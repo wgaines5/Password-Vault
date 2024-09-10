@@ -1,9 +1,11 @@
 package com.example.myapplication.presentation.theme
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.ComponentActivity
 import com.example.myapplication.R
@@ -20,22 +22,34 @@ class ViewPWD : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.viewpw)
 
-        val pwdTV = findViewById<TextView>(R.id.pwdTView)
+        val pwdLayout = findViewById<LinearLayout>(R.id.passwordListLayout)
 
         dataB.collection("Passwords")
             .get()
             .addOnSuccessListener { result ->
-                val builder = StringBuilder()
 
                 for (document: QueryDocumentSnapshot in result){
                     val siteOrAppName = document.getString("siteOrAppName")
                     val password = document.getString("password")
-                    builder.append("Site/App: $siteOrAppName\nPassword: $password\n\n")
+                    val btn = Button(this)
+                    btn.text = siteOrAppName
+                    btn.layoutParams = LinearLayout.LayoutParams(230,130)
+                    btn.setOnClickListener{
+                        AlertDialog.Builder(this)
+                            .setTitle(siteOrAppName)
+                            .setMessage("Password: $password")
+                            .setPositiveButton("Secured", null)
+                            .create()
+                            .show()
+                    }
+                    pwdLayout.addView(btn)
                 }
-                pwdTV.text = builder.toString()
+
             }
             .addOnFailureListener{
-                pwdTV.text = "Loading Failed"
+                val ebtn = Button(this)
+                ebtn.text = "Loading Failed"
+                pwdLayout.addView(ebtn)
             }
         val doneButton = findViewById<Button>(R.id.doneB2)
         doneButton.setOnClickListener{
