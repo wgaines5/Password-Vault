@@ -3,18 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/opnbckgnd_round"
     tools:context=".presentation.MainScreen">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#000000"
         android:gravity="center"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="135dp"
             android:layout_height="30dp"
+            android:background="#020101"
             android:fontFamily="cursive"
             android:gravity="center"
             android:shadowColor="#12A1E1"
