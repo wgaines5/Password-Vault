@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.wear.widget.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.wear.widget.BoxInsetLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/opnbckgnd_round"
-    android:padding="16dp">
+    android:background="@mipmap/updatebckgnd"
+    android:padding="5dp">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="170dp">
+        android:layout_height="180dp">
 
         <LinearLayout
-            android:id="@+id/passwordListLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -20,11 +20,13 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/doneB2"
-        android:layout_width="wrap_content"
+        android:id="@+id/passwordListLayout"
+        android:layout_width="120dp"
         android:layout_height="40dp"
         android:layout_gravity="bottom|center_horizontal"
-        android:layout_marginTop="140dp"
-        android:background="#C37B11"
-        android:text="Go Back" />
+        android:layout_marginBottom="5dp"
+        android:background="#03A9F4"
+        android:text="UPDATE"
+        android:textColor="#221C1C" />
+
 </androidx.wear.widget.BoxInsetLayout>

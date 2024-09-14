@@ -37,6 +37,9 @@
         <activity
             android:name=".presentation.theme.RemovePWD"
             android:exported="false"/>
+        <activity
+            android:name=".presentation.theme.UpdatePWD"
+            android:exported="false"/>
         <service
             android:name=".complication.MainComplicationService"
             android:exported="true"
