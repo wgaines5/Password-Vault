@@ -2,7 +2,7 @@
 <androidx.wear.widget.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
+    android:background="@mipmap/opnbckgnd_round"
     android:padding="16dp">
 
     <ScrollView
