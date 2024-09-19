@@ -12,6 +12,9 @@ import com.example.myapplication.R
 import com.example.myapplication.presentation.MainScreen
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QueryDocumentSnapshot
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Locale
 
 
 class ViewPWD : ComponentActivity() {
@@ -31,13 +34,18 @@ class ViewPWD : ComponentActivity() {
                 for (document: QueryDocumentSnapshot in result){
                     val siteOrAppName = document.getString("siteOrAppName")
                     val password = document.getString("password")
+                    val expDate = document.getDate("expirationDate")
+                    val currentDate = Calendar.getInstance().time
+                    val expired = expDate?.before(currentDate) ?: false
                     val btn = Button(this)
-                    btn.text = siteOrAppName
+                    btn.text = if(expired) "$siteOrAppName (Expired)" else siteOrAppName
                     btn.layoutParams = LinearLayout.LayoutParams(230,130)
                     btn.setOnClickListener{
+                        val message = if (expired) {"Password $siteOrAppName - Times Up!"}
+                        else{"Password: $password"}
                         AlertDialog.Builder(this)
                             .setTitle(siteOrAppName)
-                            .setMessage("Password: $password")
+                            .setMessage(message)
                             .setPositiveButton("Secured", null)
                             .create()
                             .show()
