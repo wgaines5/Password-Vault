@@ -11,8 +11,10 @@
         android:layout_height="180dp">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:id="@+id/pwdLContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginLeft="33dp"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -20,13 +22,13 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/passwordListLayout"
+        android:id="@+id/cancelB"
         android:layout_width="120dp"
-        android:layout_height="40dp"
+        android:layout_height="30dp"
         android:layout_gravity="bottom|center_horizontal"
         android:layout_marginBottom="5dp"
         android:background="#03A9F4"
-        android:text="UPDATE"
+        android:text="Cancel"
         android:textColor="#221C1C" />
 
 </androidx.wear.widget.BoxInsetLayout>
