@@ -12,6 +12,8 @@ import androidx.activity.ComponentActivity
 import com.example.myapplication.R
 import com.example.myapplication.presentation.MainScreen
 import com.google.firebase.firestore.FirebaseFirestore
+import java.lang.StringBuilder
+import java.security.SecureRandom
 import java.util.Calendar
 import java.util.Date
 
@@ -20,6 +22,7 @@ import java.util.Date
 class UpwdForm : ComponentActivity(){
 
     private val dataB = FirebaseFirestore.getInstance()
+    private val pwdChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#&"
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,9 +37,16 @@ class UpwdForm : ComponentActivity(){
         val passwordEntryET = findViewById<EditText>(R.id.passwordEntry2)
         val passwordExp = findViewById<Spinner>(R.id.pwdexpiration2)
         val updateB = findViewById<Button>(R.id.doneB3)
+        val generatePwdB = findViewById<Button>(R.id.generateB2)
 
         val expOptions = arrayOf("Unlimited", "1 day", "7 days", "14 days", "30 days", "60 days", "90 days")
         passwordExp.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item,expOptions)
+
+        generatePwdB.setOnClickListener {
+            val genPwd = generateRndPwd2(12)
+            passwordEntryET.setText(genPwd)
+            Toast.makeText(this, "Generated Password: $genPwd", Toast.LENGTH_SHORT).show()
+        }
 
         siteOrAppNameET.setText(siteOrAppName)
         passwordEntryET.setText(password)
@@ -85,5 +95,14 @@ class UpwdForm : ComponentActivity(){
             "90 days" -> calendar.add(Calendar.DAY_OF_YEAR, 90)
         }
         return calendar.time
+    }
+    private fun generateRndPwd2(length: Int): String{
+        val random = SecureRandom()
+        val password = StringBuilder(length)
+        for (i in 0 until length){
+            val randomChar = pwdChars[random.nextInt(pwdChars.length)]
+            password.append(randomChar)
+        }
+        return password.toString()
     }
 }

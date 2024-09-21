@@ -43,6 +43,12 @@
         <activity
             android:name=".presentation.theme.UpwdForm"
             android:exported="false"/>
+        <activity
+            android:name=".presentation.theme.IdentityInfo"
+            android:exported="false"/>
+        <activity
+            android:name=".presentation.theme.Settings"
+            android:exported="false"/>
         <service
             android:name=".complication.MainComplicationService"
             android:exported="true"

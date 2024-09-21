@@ -16,10 +16,11 @@ import com.example.myapplication.R
 
 
 import com.example.myapplication.R.layout
+import com.google.firebase.firestore.FirebaseFirestore
 
 class Login : ComponentActivity() {
 
-    private val correctPin = "1234"
+    private val dataB = FirebaseFirestore.getInstance()
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,16 +29,36 @@ class Login : ComponentActivity() {
 
        val pinEditText = findViewById<EditText>(R.id.pinEdit)
         val submitPinButton = findViewById<android.widget.Button>(R.id.submitPin)
+
         submitPinButton.setOnClickListener{
             val enteredPin = pinEditText.text.toString()
 
-            if (enteredPin == correctPin){
-                val intent = Intent(this, MainScreen::class.java)
-                startActivity(intent)
-                finish()
-            }else{
-                Toast.makeText(this, "Incorrect PIN", Toast.LENGTH_SHORT).show()
-            }
+            val userId = "user5"
+            dataB.collection("Users").document(userId)
+                .get()
+                .addOnSuccessListener { document ->
+                  if (document != null && document.getBoolean("pinRequired")== true){
+                      val correctPin = document.getString("pin")
+
+                      if (enteredPin == correctPin){
+                          val intent = Intent(this, MainScreen::class.java)
+                          startActivity(intent)
+                          finish()
+                      }else{
+                          Toast.makeText(this, "Incorrect PIN", Toast.LENGTH_SHORT).show()
+                      }
+                  }
+                  else{
+                      val intent = Intent(this, MainScreen::class.java)
+                      startActivity(intent)
+                      finish()
+                  }
+                }
+                .addOnFailureListener {
+                    Toast.makeText(this, "Pin Fetching Failed", Toast.LENGTH_SHORT).show()
+                }
+
+
         }
     }
 
