@@ -75,7 +75,7 @@ class AddPWD : ComponentActivity(){
     private fun getExpirationDate(option: String): Date {
         val calendar = Calendar.getInstance()
         when (option){
-            "Unlimited" -> null
+            "Unlimited" -> calendar.add(Calendar.DAY_OF_YEAR, 99999)
             "1 day" -> calendar.add(Calendar.DAY_OF_YEAR, 1)
             "7 days" -> calendar.add(Calendar.DAY_OF_YEAR, 7)
             "14 days" -> calendar.add(Calendar.DAY_OF_YEAR, 14)
