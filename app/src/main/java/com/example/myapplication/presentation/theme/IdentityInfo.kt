@@ -9,10 +9,13 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import com.example.myapplication.R
 import com.example.myapplication.presentation.MainScreen
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 class IdentityInfo : ComponentActivity(){
+
     private val dataB = FirebaseFirestore.getInstance()
+    private lateinit var auth: FirebaseAuth
     private lateinit var driversLicET: EditText
     private lateinit var socialSecET: EditText
     private lateinit var insuranceET: EditText
@@ -24,6 +27,8 @@ class IdentityInfo : ComponentActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.pinfo)
+
+        auth = FirebaseAuth.getInstance()
 
         driversLicET = findViewById(R.id.driverLs)
         socialSecET = findViewById(R.id.socialSec)
@@ -47,7 +52,7 @@ class IdentityInfo : ComponentActivity(){
     }
 
     private fun loadFirebaseData(){
-        val userId = "user5"
+        val userId = auth.currentUser?.uid ?: return
         dataB.collection("IdentityInfo").document(userId)
             .get()
             .addOnSuccessListener { document ->
@@ -66,7 +71,7 @@ class IdentityInfo : ComponentActivity(){
     }
 
     private fun saveFirebaseData(){
-        val userId = "user5"
+        val userId = auth.currentUser?.uid ?: return
         val identityData = hashMapOf(
             "driversLicense" to driversLicET.text.toString(),
             "socialSecurity" to socialSecET.text.toString(),

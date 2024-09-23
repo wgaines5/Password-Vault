@@ -66,6 +66,7 @@ dependencies {
     implementation(platform("androidx.compose:compose-bom:2023.08.00"))
     implementation(platform("androidx.compose:compose-bom:2023.08.00"))
     implementation("com.google.firebase:firebase-firestore-ktx:25.1.0")
+    implementation("com.google.firebase:firebase-auth:23.0.0")
     androidTestImplementation(platform("androidx.compose:compose-bom:2023.08.00"))
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     androidTestImplementation(platform("androidx.compose:compose-bom:2023.08.00"))

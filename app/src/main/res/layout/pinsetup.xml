@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@mipmap/clsbckgnd"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center"
+        android:background="#000000"
+        android:fontFamily="sans-serif-medium"
+        android:text="Pin Setup"
+        android:textColor="#03A9F4" />
+
+    <EditText
+        android:id="@+id/pin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif-black"
+        android:hint="ENTER PIN"
+        android:inputType="number"
+        android:textColorHint="#000000" />
+
+    <EditText
+        android:id="@+id/cPin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:hint="CONFIRM PIN"
+        android:inputType="number"
+        android:textColorHint="#000000" />
+
+    <Button
+        android:id="@+id/pinB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="#4CAF50"
+        android:text="SAVE PIN" />
+
+
+</LinearLayout>
