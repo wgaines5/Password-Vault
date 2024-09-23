@@ -15,7 +15,9 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.example.myapplication.R
 import com.example.myapplication.R.layout
 import com.example.myapplication.presentation.theme.AddPWD
+import com.example.myapplication.presentation.theme.IdentityInfo
 import com.example.myapplication.presentation.theme.RemovePWD
+import com.example.myapplication.presentation.theme.Settings
 import com.example.myapplication.presentation.theme.UpdatePWD
 import com.example.myapplication.presentation.theme.ViewPWD
 
@@ -30,7 +32,8 @@ class MainScreen : ComponentActivity() {
         val viewPasswordsButton = findViewById<Button>(R.id.viewPasswordsButton)
         val removePasswordButton = findViewById<Button>(R.id.removePasswordsButton)
         val updatePasswordButton = findViewById<Button>(R.id.updatePasswordsButton)
-
+        val informationButton = findViewById<Button>(R.id.infoButton)
+        val settingsButton = findViewById<Button>(R.id.settingsButton)
 
         addPasswordButton.setOnClickListener{
             val intent = Intent(this, AddPWD::class.java)
@@ -49,6 +52,16 @@ class MainScreen : ComponentActivity() {
 
         updatePasswordButton.setOnClickListener{
             val intent = Intent(this, UpdatePWD::class.java)
+            startActivity(intent)
+        }
+
+        informationButton.setOnClickListener {
+            val intent = Intent(this, IdentityInfo::class.java)
+            startActivity(intent)
+        }
+
+        settingsButton.setOnClickListener {
+            val intent = Intent(this, Settings::class.java)
             startActivity(intent)
         }
 

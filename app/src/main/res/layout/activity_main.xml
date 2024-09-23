@@ -6,37 +6,53 @@
     android:background="@mipmap/opnbckgnd_round"
     tools:context=".presentation.MainScreen">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="#020101"
+        android:fontFamily="cursive"
+        android:gravity="center"
+        android:shadowColor="#12A1E1"
+        android:text="PASSWORD VAULT"
+        android:textColor="#039BE5"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:layout_marginTop="50dp"
+    >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="135dp"
-            android:layout_height="30dp"
-            android:background="#020101"
-            android:fontFamily="cursive"
-            android:gravity="center"
-            android:shadowColor="#12A1E1"
-            android:text="PASSWORD VAULT"
-            android:textColor="#039BE5"
-            android:textSize="14sp"
-            android:textStyle="bold" />
-
         <Button
             android:id="@+id/addPasswordButton"
             android:layout_width="125dp"
             android:layout_height="38dp"
-            android:backgroundTint="#4CAF50"
+            android:backgroundTint="#31C837"
             android:text="Add"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/updatePasswordsButton"
+            android:layout_width="125dp"
+            android:layout_height="38dp"
+            android:backgroundTint="#87D131"
+            android:text="Update"
             android:textSize="14sp" />
 
         <Button
             android:id="@+id/viewPasswordsButton"
             android:layout_width="125dp"
             android:layout_height="38dp"
-            android:backgroundTint="#A3660C"
+            android:backgroundTint="#FFC107"
             android:text="View"
             android:textSize="14sp" />
 
@@ -49,11 +65,24 @@
             android:textSize="14sp" />
 
         <Button
-            android:id="@+id/updatePasswordsButton"
+            android:id="@+id/infoButton"
             android:layout_width="125dp"
             android:layout_height="38dp"
-            android:backgroundTint="#2BB3F1"
-            android:text="Update"
+            android:backgroundTint="#FF5722"
+            android:text="Identification"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/settingsButton"
+            android:layout_width="125dp"
+            android:layout_height="38dp"
+            android:backgroundTint="#FF9800"
+            android:text="Settings"
             android:textSize="14sp" />
+
+
+
+
     </LinearLayout>
+</ScrollView>
 </androidx.wear.widget.BoxInsetLayout>

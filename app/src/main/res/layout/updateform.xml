@@ -43,7 +43,14 @@
         android:textColor="#000000"
         android:textColorHint="#000000" />
 
-
+    <Button
+        android:id="@+id/generateB2"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:layout_marginTop="5dp"
+        android:background="#86BFED"
+        android:text="Generate"
+        android:textColor="#000000"/>
 
     <Button
         android:id="@+id/doneB3"
