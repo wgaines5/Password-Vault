@@ -31,10 +31,12 @@ class ViewPWD : ComponentActivity() {
 
         val pwdLayout = findViewById<LinearLayout>(R.id.passwordListLayout)
         val curUser = auth.currentUser
+        val userId = auth.currentUser?.uid ?: return
 
         if (curUser != null) {
 
             dataB.collection("Passwords")
+                .whereEqualTo("userId", userId)
                 .get()
                 .addOnSuccessListener { result ->
 
@@ -49,7 +51,7 @@ class ViewPWD : ComponentActivity() {
                         btn.layoutParams = LinearLayout.LayoutParams(230, 130)
                         btn.setOnClickListener {
                             val message = if (expired) {
-                                "Password $siteOrAppName - Times Up!"
+                                "Password $siteOrAppName - Password Expired!"
                             } else {
                                 "Password: $password"
                             }
@@ -87,3 +89,5 @@ class ViewPWD : ComponentActivity() {
         }
     }
 }
+
+

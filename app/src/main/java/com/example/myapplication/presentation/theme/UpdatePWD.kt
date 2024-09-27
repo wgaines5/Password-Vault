@@ -58,6 +58,7 @@ class UpdatePWD : ComponentActivity() {
         val password = document.getString("password") ?: ""
         val button = Button(this)
         button.text = siteOrAppName
+        button.layoutParams = LinearLayout.LayoutParams(230, 130)
 
         button.setOnClickListener {
             val intent = Intent(this, UpwdForm::class.java).apply{
