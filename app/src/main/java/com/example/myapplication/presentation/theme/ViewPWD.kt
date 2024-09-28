@@ -58,7 +58,7 @@ class ViewPWD : ComponentActivity() {
                             AlertDialog.Builder(this)
                                 .setTitle(siteOrAppName)
                                 .setMessage(message)
-                                .setPositiveButton("Click to Return", null)
+                                .setPositiveButton("Tap to Return", null)
                                 .create()
                                 .show()
                         }

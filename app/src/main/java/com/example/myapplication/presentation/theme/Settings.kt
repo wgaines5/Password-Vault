@@ -30,7 +30,7 @@ class Settings : ComponentActivity() {
         val pinET = findViewById<EditText>(R.id.nPin)
         val cPinET = findViewById<EditText>(R.id.confPin)
 
-        loadPinReqStatus{ pinRequired -> pToggle.isChecked = pinRequired}
+        loadPinReqStatus{ pinRequired -> pToggle.isChecked = pinRequired }
 
         pToggle.setOnCheckedChangeListener{_, isChecked ->
             updatePinReq(isChecked)

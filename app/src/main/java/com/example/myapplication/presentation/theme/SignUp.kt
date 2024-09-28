@@ -7,6 +7,8 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import com.example.myapplication.R
+import com.example.myapplication.presentation.Login
+import com.example.myapplication.presentation.MainScreen
 import com.google.firebase.auth.FirebaseAuth
 
 class SignUp : ComponentActivity() {
@@ -42,6 +44,10 @@ class SignUp : ComponentActivity() {
             }
             else{
                 Toast.makeText(this, "Enter Email and Password",Toast.LENGTH_SHORT).show()
+
+                val intent = Intent(this, Login::class.java)
+                startActivity(intent)
+                finish()
             }
         }
     }
