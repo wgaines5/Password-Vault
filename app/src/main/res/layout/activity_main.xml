@@ -11,7 +11,7 @@
         android:layout_height="30dp"
         android:layout_gravity="top|center_horizontal"
         android:layout_marginTop="20dp"
-        android:background="#020101"
+        android:background="@drawable/heading"
         android:fontFamily="cursive"
         android:gravity="center"
         android:shadowColor="#12A1E1"
