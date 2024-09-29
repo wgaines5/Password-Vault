@@ -20,98 +20,96 @@
         android:textSize="14sp"
         android:textStyle="bold" />
 
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:gravity="center_vertical"
-    android:layout_marginTop="50dp"
-    >
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center_vertical">
 
-        <Button
-            android:id="@+id/SearchB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/gold_bar"
-            android:text="SEARCH"
-            android:textColor="#000000"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_margin="5dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/addPasswordButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/gold_bar"
-            android:text="Add"
-            android:textColor="#000000"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_margin="5dp"/>
+            <Button
+                android:id="@+id/SearchB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/gold_bar"
+                android:text="SEARCH"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/updatePasswordsButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/gold_bar"
-            android:text="Update"
-            android:textColor="#000000"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_margin="5dp"/>
+            <Button
+                android:id="@+id/addPasswordButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/gold_bar"
+                android:text="Add"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/viewPasswordsButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/gold_bar"
-            android:text="View"
-            android:textColor="#000000"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_margin="5dp"/>
+            <Button
+                android:id="@+id/updatePasswordsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/gold_bar"
+                android:text="Update"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/removePasswordsButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/gold_bar"
-            android:text="Remove"
-            android:textColor="#000000"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_margin="5dp"/>
+            <Button
+                android:id="@+id/viewPasswordsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/gold_bar"
+                android:text="View"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/infoButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/gold_bar"
-            android:text="Identification"
-            android:textColor="#000000"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_margin="5dp"/>
+            <Button
+                android:id="@+id/removePasswordsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/gold_bar"
+                android:text="Remove"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/settingsButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/gold_bar"
-            android:text="Settings"
-            android:textColor="#000000"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_margin="5dp"/>
+            <Button
+                android:id="@+id/infoButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/gold_bar"
+                android:text="Identification"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/settingsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/gold_bar"
+                android:text="Settings"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
 
-
-
-    </LinearLayout>
-</ScrollView>
+        </LinearLayout>
+    </ScrollView>
 </androidx.wear.widget.BoxInsetLayout>

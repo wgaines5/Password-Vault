@@ -16,6 +16,7 @@ import com.example.myapplication.presentation.MainScreen
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QueryDocumentSnapshot
+import java.io.File
 import java.util.Calendar
 
 class SearchPWD : ComponentActivity(){
@@ -86,10 +87,14 @@ class SearchPWD : ComponentActivity(){
                             } else {
                                 "Password: $password"
                             }
+
                             AlertDialog.Builder(this)
                                 .setTitle(siteOrAppName)
                                 .setMessage(message)
                                 .setPositiveButton("RETURN", null)
+                                .setNeutralButton("EXPORT"){_, _ ->
+                                    exportPWD(siteOrAppName, password ?: "No Password")
+                                }
                                 .create()
                                 .show()
                         }
@@ -108,5 +113,23 @@ class SearchPWD : ComponentActivity(){
                 eText.text = "Loading Failed"
                 layResult.addView(eText)
             }
+    }
+
+    private fun exportPWD(siteOrAppName: String, password: String){
+        try {
+
+            val fileName = "$siteOrAppName-password.txt"
+            val output = getExternalFilesDir(null)
+            val pwdF = File(output, fileName)
+
+            pwdF.writeText("Password for $siteOrAppName: $password")
+            Toast.makeText(this, "Export Completed to ${pwdF.absolutePath}", Toast.LENGTH_LONG).show()
+
+        }
+        catch (e: Exception){
+            e.printStackTrace()
+            Toast.makeText(this, "Export Failed", Toast.LENGTH_SHORT).show()
+        }
+
     }
 }

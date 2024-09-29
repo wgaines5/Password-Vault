@@ -17,31 +17,37 @@
 
         <Switch
             android:id="@+id/pinSwitch"
-            android:layout_width="142dp"
-            android:layout_height="38dp"
-            android:layout_marginTop="10dp"
-            android:background="#000000"
+            android:layout_width="148dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/heading"
+            android:checked="true"
             android:fontFamily="sans-serif-black"
             android:text="LOGIN PIN (SECURITY)"
             android:textColor="#CA1010"
-            android:textSize="16sp"
-            android:checked="true"/>
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/nPin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/entry"
             android:hint="New Pin"
             android:inputType="number"
-            android:textColorHint="#FBFBFB" />
+            android:textStyle="bold"
+            android:textColorHint="#F40000" />
 
         <EditText
             android:id="@+id/confPin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/entry"
             android:hint="Confirm Pin"
             android:inputType="number"
-            android:textColorHint="#FFFFFF" />
+            android:textStyle="bold"
+            android:textColorHint="#EF0000" />
 
 
     </LinearLayout>

@@ -2,11 +2,12 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/indentity">
+    android:background="@mipmap/indentificationbgrn_round">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="50dp"
@@ -17,68 +18,87 @@
             android:id="@+id/driverLs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/black_han_sans"
             android:hint="License Num"
-            android:shadowColor="#E30303"
-            android:textColor="#000000"
-            android:textColorHint="#E40000" />
+            android:shadowColor="#ffffff"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:background="@drawable/entry"
+            android:textColorHint="#e30303" />
 
         <EditText
             android:id="@+id/socialSec"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:fontFamily="@font/black_han_sans"
             android:hint="Social Security"
-            android:shadowColor="#E30303"
-            android:textColor="#000000"
-            android:textColorHint="#000000" />
+            android:shadowColor="#ffffff"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:background="@drawable/entry"
+            android:textColorHint="#e30303" />
 
         <EditText
             android:id="@+id/insuranceP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:fontFamily="@font/black_han_sans"
             android:hint="Ins Policy Num"
-            android:shadowColor="#E30303"
-            android:textColor="#000000"
-            android:textColorHint="#000000"/>
+            android:shadowColor="#ffffff"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:background="@drawable/entry"
+            android:textColorHint="#e30303" />
 
         <EditText
             android:id="@+id/vinNum"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:fontFamily="@font/black_han_sans"
             android:hint="Vehicle Vin Num"
-            android:shadowColor="#E30303"
-            android:textColor="#000000"
-            android:textColorHint="#000000"/>
+            android:shadowColor="#ffffff"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:background="@drawable/entry"
+            android:textColorHint="#e30303"/>
 
         <EditText
             android:id="@+id/cryptoKey"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:fontFamily="@font/black_han_sans"
             android:hint="Crypto/Key Phrase"
-            android:shadowColor="#E30303"
-            android:textColor="#000000"
-            android:textColorHint="#000000"/>
+            android:shadowColor="#ffffff"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:background="@drawable/entry"
+            android:textColorHint="#e30303"/>
 
         <EditText
             android:id="@+id/bankAcct"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:fontFamily="@font/black_han_sans"
             android:hint="Bank Account Num"
-            android:shadowColor="#E30303"
-            android:textColor="#000000"
-            android:textColorHint="#000000"/>
+            android:shadowColor="#ffffff"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:background="@drawable/entry"
+            android:textColorHint="#e30303"/>
 
         <Button
             android:id="@+id/saveB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center_horizontal"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="60dp"
             android:text="Save"
             android:background="@drawable/done_save_but"/>
 

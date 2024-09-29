@@ -8,12 +8,14 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import com.example.myapplication.R
 import com.example.myapplication.presentation.MainScreen
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QueryDocumentSnapshot
+import java.io.File
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
@@ -64,6 +66,11 @@ class ViewPWD : ComponentActivity() {
                                 .setTitle(siteOrAppName)
                                 .setMessage(message)
                                 .setPositiveButton("Tap to Return", null)
+                                .setNeutralButton("EXPORT"){_, _ ->
+                                    if (siteOrAppName != null) {
+                                        exportPWD(siteOrAppName, password ?: "No Password")
+                                    }
+                                }
                                 .create()
                                 .show()
                         }
@@ -92,6 +99,24 @@ class ViewPWD : ComponentActivity() {
             startActivity(intent)
             finish()
         }
+    }
+
+    private fun exportPWD(siteOrAppName: String, password: String){
+        try {
+
+            val fileName = "$siteOrAppName-password.txt"
+            val output = getExternalFilesDir(null)
+            val pwdF = File(output, fileName)
+
+            pwdF.writeText("Password for $siteOrAppName: $password")
+            Toast.makeText(this, "Export Completed to ${pwdF.absolutePath}", Toast.LENGTH_LONG).show()
+
+        }
+        catch (e: Exception){
+            e.printStackTrace()
+            Toast.makeText(this, "Export Failed", Toast.LENGTH_SHORT).show()
+        }
+
     }
 }
 
