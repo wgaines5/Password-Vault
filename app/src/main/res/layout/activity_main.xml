@@ -33,6 +33,17 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/SearchB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gold_bar"
+            android:text="SEARCH"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_margin="5dp"/>
+
+        <Button
             android:id="@+id/addPasswordButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
