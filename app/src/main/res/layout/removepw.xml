@@ -25,11 +25,12 @@
         android:layout_width="90dp"
         android:layout_height="50dp"
         android:layout_gravity="bottom|center_horizontal"
-        android:backgroundTint="#E43333"
+        android:background="@drawable/remove_button"
         android:padding="16dp"
         android:shadowColor="#000000"
         android:text="Delete"
-        android:textColor="#050404"/>
+        android:textColor="#ffffff"
+        android:textStyle="bold"/>
 
 
 </androidx.wear.widget.BoxInsetLayout>

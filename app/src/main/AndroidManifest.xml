@@ -55,6 +55,9 @@
         <activity
             android:name=".presentation.theme.PinSetup"
             android:exported="false"/>
+        <activity
+            android:name=".presentation.theme.SearchPWD"
+            android:exported="false"/>
         <service
             android:name=".complication.MainComplicationService"
             android:exported="true"

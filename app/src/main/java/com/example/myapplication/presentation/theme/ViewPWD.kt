@@ -3,6 +3,7 @@ package com.example.myapplication.presentation.theme
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
 import android.widget.LinearLayout
@@ -49,6 +50,10 @@ class ViewPWD : ComponentActivity() {
                         val btn = Button(this)
                         btn.text = if (expired) "$siteOrAppName (Expired)" else siteOrAppName
                         btn.layoutParams = LinearLayout.LayoutParams(230, 130)
+                        btn.background = getDrawable(R.drawable.gold_bar)
+                        btn.setTypeface(null, android.graphics.Typeface.BOLD)
+                        btn.setTextColor(Color.parseColor("#000000"))
+
                         btn.setOnClickListener {
                             val message = if (expired) {
                                 "Password $siteOrAppName - Password Expired!"
@@ -58,7 +63,7 @@ class ViewPWD : ComponentActivity() {
                             AlertDialog.Builder(this)
                                 .setTitle(siteOrAppName)
                                 .setMessage(message)
-                                .setPositiveButton("Click to Return", null)
+                                .setPositiveButton("Tap to Return", null)
                                 .create()
                                 .show()
                         }

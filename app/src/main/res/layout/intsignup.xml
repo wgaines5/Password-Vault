@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="top|center"
-        android:background="#000000"
+        android:background="@drawable/heading"
         android:backgroundTint="#000000"
         android:fontFamily="sans-serif-black"
         android:text="Welcome to the \nPassword Vault"
@@ -41,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:backgroundTint="#4CAF50"
+        android:background="@drawable/signup"
         android:text="Sign Up"
         android:textColor="#FBFBFB" />
 

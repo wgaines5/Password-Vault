@@ -2,6 +2,7 @@ package com.example.myapplication.presentation.theme
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
 import android.widget.LinearLayout
@@ -59,6 +60,9 @@ class UpdatePWD : ComponentActivity() {
         val button = Button(this)
         button.text = siteOrAppName
         button.layoutParams = LinearLayout.LayoutParams(230, 130)
+        button.background = getDrawable(R.drawable.gold_bar)
+        button.setTypeface(null, android.graphics.Typeface.BOLD)
+        button.setTextColor(Color.parseColor("#000000"))
 
         button.setOnClickListener {
             val intent = Intent(this, UpwdForm::class.java).apply{
