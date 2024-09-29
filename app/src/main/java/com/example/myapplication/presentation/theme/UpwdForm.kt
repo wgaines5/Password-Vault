@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import com.example.myapplication.R
 import com.example.myapplication.presentation.MainScreen
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.lang.StringBuilder
 import java.security.SecureRandom
@@ -23,11 +24,15 @@ class UpwdForm : ComponentActivity(){
 
     private val dataB = FirebaseFirestore.getInstance()
     private val pwdChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#&"
+    private lateinit var auth: FirebaseAuth
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.updateform)
+
+        auth = FirebaseAuth.getInstance()
+        val curUser = auth.currentUser
 
         val docId = intent.getStringExtra("docId")
         val siteOrAppName = intent.getStringExtra("siteOrAppName")
@@ -59,11 +64,12 @@ class UpwdForm : ComponentActivity(){
             val expOption = passwordExp.selectedItem.toString()
             val updatedExpDate = getExpDate(expOption)
 
-            if (updatedSiteOrApp.isNotEmpty() && updatedPWD.isNotEmpty()){
+            if (curUser != null && updatedSiteOrApp.isNotEmpty() && updatedPWD.isNotEmpty()){
                 val updatedData = hashMapOf(
                     "siteOrAppName" to updatedSiteOrApp,
                     "password" to updatedPWD,
-                    "expirationDate" to updatedExpDate
+                    "expirationDate" to updatedExpDate,
+                    "userId" to curUser.uid
                 )
 
                 if (docId != null){
@@ -86,7 +92,7 @@ class UpwdForm : ComponentActivity(){
     private fun getExpDate(option: String): Date?{
         val calendar = Calendar.getInstance()
         when (option){
-            "Unlimited" -> null
+            "Unlimited" -> calendar.add(Calendar.DAY_OF_YEAR,99999)
             "1 day" -> calendar.add(Calendar.DAY_OF_YEAR, 1)
             "7 days" -> calendar.add(Calendar.DAY_OF_YEAR, 7)
             "14 days" -> calendar.add(Calendar.DAY_OF_YEAR, 14)

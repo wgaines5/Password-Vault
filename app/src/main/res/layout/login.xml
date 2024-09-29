@@ -49,9 +49,10 @@
         android:layout_height="wrap_content"
         android:text="Unlock"
         android:layout_gravity="bottom|center_vertical"
-        android:backgroundTint="#4CAF50"
-        android:textColor="#FFFFFF"
-        android:layout_marginBottom="30dp"/>
+        android:background="@drawable/unlock"
+        android:textStyle="bold"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="10dp"/>
 
     <Button
         android:id="@+id/newUser"
@@ -59,6 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
         android:layout_marginBottom="30dp"
-        android:backgroundTint="#4CAF50"
+        android:background="@drawable/signup"
+        android:textColor="#ffffff"
         android:text="Sign up" />
 </androidx.wear.widget.BoxInsetLayout>

@@ -79,7 +79,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center_horizontal"
             android:layout_marginBottom="40dp"
-            android:text="Save" />
+            android:text="Save"
+            android:background="@drawable/done_save_but"/>
 
     </LinearLayout>
 </ScrollView>

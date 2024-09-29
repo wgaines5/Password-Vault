@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import com.example.myapplication.R
 import com.example.myapplication.presentation.MainScreen
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.lang.StringBuilder
 import java.security.SecureRandom
@@ -23,10 +24,13 @@ class AddPWD : ComponentActivity(){
 
     private val dataB = FirebaseFirestore.getInstance()
     private val pwdChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#&"
+    private lateinit var auth: FirebaseAuth
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.addpw)
+
+        auth = FirebaseAuth.getInstance()
 
         val siteOrAppNameET = findViewById<EditText>(R.id.siteOrAppName)
         val passwordEntryET = findViewById<EditText>(R.id.passwordEntry)
@@ -50,19 +54,32 @@ class AddPWD : ComponentActivity(){
 
             if (siteOrAppName.isNotEmpty() && password.isNotEmpty()){
                 val expDate = getExpirationDate(expOption)
-                val userPasswordData = hashMapOf("siteOrAppName" to siteOrAppName,"password" to password, "expirationDate" to expDate)
+                val curUser = auth.currentUser
 
-                dataB.collection("Passwords")
-                    .add(userPasswordData)
-                    .addOnSuccessListener { Toast.makeText(this, "Password Saved Successfully", Toast.LENGTH_SHORT).show()
+                if(curUser != null) {
+                    val userPasswordData = hashMapOf(
+                        "siteOrAppName" to siteOrAppName,
+                        "password" to password,
+                        "expirationDate" to expDate,
+                        "userId" to curUser.uid
+                    )
+                    dataB.collection("Passwords")
+                        .add(userPasswordData)
+                        .addOnSuccessListener {
+                            Toast.makeText(this, "Password Saved Successfully", Toast.LENGTH_SHORT)
+                                .show()
 
-                    val intent = Intent(this, MainScreen::class.java)
-                    startActivity(intent)
-                    finish()
-                    }
-                    .addOnFailureListener{
-                        Toast.makeText(this, "Password Not Saved", Toast.LENGTH_SHORT).show()
-                    }
+                            val intent = Intent(this, MainScreen::class.java)
+                            startActivity(intent)
+                            finish()
+                        }
+                        .addOnFailureListener {
+                            Toast.makeText(this, "Password Not Saved", Toast.LENGTH_SHORT).show()
+                        }
+                }
+                else{
+                    Toast.makeText(this, "Authentication Failed", Toast.LENGTH_SHORT).show()
+                }
             }
             else{
                 intent = Intent(this, MainScreen::class.java)
@@ -75,7 +92,7 @@ class AddPWD : ComponentActivity(){
     private fun getExpirationDate(option: String): Date {
         val calendar = Calendar.getInstance()
         when (option){
-            "Unlimited" -> null
+            "Unlimited" -> calendar.add(Calendar.DAY_OF_YEAR, 99999)
             "1 day" -> calendar.add(Calendar.DAY_OF_YEAR, 1)
             "7 days" -> calendar.add(Calendar.DAY_OF_YEAR, 7)
             "14 days" -> calendar.add(Calendar.DAY_OF_YEAR, 14)

@@ -32,35 +32,58 @@ class Login : ComponentActivity() {
         setContentView(layout.login)
 
         auth = FirebaseAuth.getInstance()
+        val userId = auth.currentUser?.uid
 
-       val pinEditText = findViewById<EditText>(R.id.pinEdit)
+        if (userId != null){
+            dataB.collection("Users").document(userId)
+                .get()
+                .addOnSuccessListener { document ->
+                    val pinReq = document.getBoolean("pinRequired") ?: true
+                    if (!pinReq) {
+                        val intent = Intent(this, MainScreen::class.java)
+                        startActivity(intent)
+                        finish()
+                    } else {
+                        setLoginScrn()
+                    }
+                }
+                .addOnFailureListener { setLoginScrn() }
+        }
+        else{
+            setLoginScrn()
+        }
+    }
+
+    private fun setLoginScrn() {
+
+        val pinEditText = findViewById<EditText>(R.id.pinEdit)
         val submitPinButton = findViewById<android.widget.Button>(R.id.submitPin)
         val newUserB = findViewById<Button>(R.id.newUser)
 
-        submitPinButton.setOnClickListener{
+        submitPinButton.setOnClickListener {
             val enteredPin = pinEditText.text.toString()
             val userId = auth.currentUser?.uid
 
-             if (userId != null) {
-                 dataB.collection("Users").document(userId)
-                     .get()
-                     .addOnSuccessListener { document ->
-                         val storedPin = document.getString("pin")
-                         if (storedPin != null && storedPin == enteredPin) {
 
-                             val intent = Intent(this, MainScreen::class.java)
-                             startActivity(intent)
-                             finish()
-                         }
-                         else{
-                             Toast.makeText(this, "Pin Incorrect", Toast.LENGTH_SHORT).show()
-                         }
-                     }
-                     .addOnFailureListener {
-                         Toast.makeText(this, "Pin Fetching Failed", Toast.LENGTH_SHORT).show()
-                     }
+            if (userId != null) {
+                dataB.collection("Users").document(userId)
+                    .get()
+                    .addOnSuccessListener { document ->
+                        val storedPin = document.getString("pin")
+                        if (storedPin != null && storedPin == enteredPin) {
 
-             }
+                            val intent = Intent(this, MainScreen::class.java)
+                            startActivity(intent)
+                            finish()
+                        } else {
+                            Toast.makeText(this, "Pin Incorrect", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                    .addOnFailureListener {
+                        Toast.makeText(this, "Pin Fetching Failed", Toast.LENGTH_SHORT).show()
+                    }
+
+            }
         }
 
         newUserB.setOnClickListener {

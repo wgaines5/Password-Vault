@@ -25,6 +25,8 @@
         android:layout_height="40dp"
         android:layout_gravity="bottom|center_horizontal"
         android:layout_marginTop="140dp"
-        android:background="#C37B11"
+        android:background="@drawable/done_save_but"
+        android:textColor="#000000"
+        android:textStyle="bold"
         android:text="Go Back" />
 </androidx.wear.widget.BoxInsetLayout>

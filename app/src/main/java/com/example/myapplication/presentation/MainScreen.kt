@@ -17,6 +17,7 @@ import com.example.myapplication.R.layout
 import com.example.myapplication.presentation.theme.AddPWD
 import com.example.myapplication.presentation.theme.IdentityInfo
 import com.example.myapplication.presentation.theme.RemovePWD
+import com.example.myapplication.presentation.theme.SearchPWD
 import com.example.myapplication.presentation.theme.Settings
 import com.example.myapplication.presentation.theme.UpdatePWD
 import com.example.myapplication.presentation.theme.ViewPWD
@@ -34,6 +35,13 @@ class MainScreen : ComponentActivity() {
         val updatePasswordButton = findViewById<Button>(R.id.updatePasswordsButton)
         val informationButton = findViewById<Button>(R.id.infoButton)
         val settingsButton = findViewById<Button>(R.id.settingsButton)
+        val searchButton = findViewById<Button>(R.id.SearchB)
+
+        searchButton.setOnClickListener {
+            val intent = Intent(this, SearchPWD::class.java)
+            startActivity(intent)
+            finish()
+        }
 
         addPasswordButton.setOnClickListener{
             val intent = Intent(this, AddPWD::class.java)
