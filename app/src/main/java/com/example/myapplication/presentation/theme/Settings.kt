@@ -43,8 +43,11 @@ class Settings : ComponentActivity() {
             if (pin.isNotEmpty() && pin == cPin){
                 updatePin(pin)
             }
+            else if (pin != cPin){
+                Toast.makeText(this, "PIN MISMATCH", Toast.LENGTH_SHORT).show()
+            }
             else{
-                Toast.makeText(this, "Pin Mismatch", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "TOGGLE UPDATED",Toast.LENGTH_SHORT).show()
             }
 
             val intent = Intent(this, MainScreen::class.java)
