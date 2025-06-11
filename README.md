@@ -66,6 +66,12 @@ Add, view, search, update or remove stored passwords
 View/edit your user info under Identity Info
 
 Toggle PIN-on-launch or reset PIN in Settings
+![Screenshot 2025-06-09 134734](https://github.com/user-attachments/assets/5ce949ea-ae24-485e-8b99-e0be5983c4ca)
+![Screenshot 2024-09-29 163412](https://github.com/user-attachments/assets/fa70e56a-e62c-406a-bcbe-0791c1036173)
+![Screenshot 2024-09-29 163123](https://github.com/user-attachments/assets/95ff6fd1-b2f9-4425-8b0b-e17649bab6ae)
+![Screenshot 2024-09-29 163603](https://github.com/user-attachments/assets/3ed5080f-1381-46ca-941b-d2a6dec16612)
+![Screenshot 2024-09-29 163327](https://github.com/user-attachments/assets/53cf2200-d75e-4aa7-b820-82763ee8b1e6)
+
 
 📬 Contact
 Willie Gaines • williegaines5@gmail.com
